@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern responsive webpage with interactive dynamic navigation menu built with HTML, CSS, and JavaScript.">
+  <title>NovaTech — Next-Gen Digital Experience</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <!-- ========================
+       STICKY / FIXED NAVBAR
+       ======================== -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="nav-brand" id="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <span class="brand-text">Nova<span class="brand-accent">Tech</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active" id="nav-home">
+              <span class="link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </span>
+              <span class="link-text">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link" id="nav-about">
+              <span class="link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+              </span>
+              <span class="link-text">About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link" id="nav-services">
+              <span class="link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 9 6 6"></path><path d="m15 9-6 6"></path></svg>
+              </span>
+              <span class="link-text">Services</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#portfolio" class="nav-link" id="nav-portfolio">
+              <span class="link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </span>
+              <span class="link-text">Showcase</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" id="nav-contact">
+              <span class="link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </span>
+              <span class="link-text">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Theme toggle + CTA + Mobile Toggle) -->
+      <div class="nav-actions">
+        <!-- Theme Switch Button -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="btn btn-primary nav-cta" id="nav-cta-btn">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-toggle-btn" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger-bar bar-1"></span>
+          <span class="hamburger-bar bar-2"></span>
+          <span class="hamburger-bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Overlay / Backdrop -->
+    <div class="mobile-backdrop" id="mobile-backdrop"></div>
+  </header>
+
+  <!-- ========================
+       MAIN CONTENT
+       ======================== -->
+  <main>
+    <!-- Section 1: HERO -->
+    <section class="section hero-section" id="home">
+      <div class="glow-orb glow-1"></div>
+      <div class="glow-orb glow-2"></div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Task 01 &bull; Interactive Navigation UI</span>
+          </div>
+
+          <h1 class="hero-title">
+            Seamless Interaction.<br>
+            <span class="gradient-text">Intelligent Navigation.</span>
+          </h1>
+
+          <p class="hero-description">
+            Experience our dynamic navigation bar that transforms seamlessly upon scrolling, 
+            features fluid micro-interactions on hover, and dynamically highlights your current section with precision.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary btn-lg" id="hero-explore-btn">
+              <span>Explore Features</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#about" class="btn btn-secondary btn-lg" id="hero-about-btn">
+              <span>Learn More</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-value">60 FPS</span>
+              <span class="metric-label">Smooth Scroll</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-value">100%</span>
+              <span class="metric-label">Responsive</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-value">0ms</span>
+              <span class="metric-label">Lag Transition</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Hero Showcase Card -->
+        <div class="hero-visual">
+          <div class="interactive-card">
+            <div class="card-header-bar">
+              <div class="dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="card-url">novatech.io/interactive-nav</span>
+            </div>
+            <div class="card-preview-body">
+              <div class="nav-state-simulator">
+                <div class="sim-label">Navbar State Controller</div>
+                <div class="sim-controls">
+                  <button class="sim-btn active" id="sim-top" data-target="top">Top (Transparent)</button>
+                  <button class="sim-btn" id="sim-scrolled" data-target="scrolled">Scrolled (Frosted)</button>
+                </div>
+                <div class="sim-feedback" id="sim-feedback">
+                  <span class="status-indicator"></span>
+                  <span id="nav-state-text">Current State: Top View (Sleek Glass Base)</span>
+                </div>
+              </div>
+              
+              <div class="mini-feature-list">
+                <div class="mini-feature">
+                  <div class="mini-icon">⚡</div>
+                  <div>
+                    <h4>Intersection Observer</h4>
+                    <p>Real-time ScrollSpy element tracking</p>
+                  </div>
+                </div>
+                <div class="mini-feature">
+                  <div class="mini-icon">🎨</div>
+                  <div>
+                    <h4>Dynamic Styling</h4>
+                    <p>CSS backdrop blur & shadow shifts</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: ABOUT -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">About The Architecture</span>
+          <h2 class="section-title">Engineered For Modern Aesthetics & Performance</h2>
+          <p class="section-subtitle">
+            Built from scratch with clean, semantic HTML5, modern CSS3 variables, and vanilla JavaScript without external dependencies.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3>Fixed & Fluid</h3>
+            <p>
+              The navigation bar remains fixed at the top viewport edge while dynamically reacting to scroll triggers, reducing header clutter when reading content.
+            </p>
+            <ul class="feature-bullets">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero layout shifts on scroll</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Hardware-accelerated GPU transforms</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <div class="about-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <h3>Active ScrollSpy</h3>
+            <p>
+              Tracks current viewport sections via <code>IntersectionObserver</code> to automatically highlight active navigation menu anchors in real-time.
+            </p>
+            <ul class="feature-bullets">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Accurate section highlighting</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Smooth auto-scroll behavior</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <div class="about-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <h3>Fully Responsive</h3>
+            <p>
+              Adapts gracefully from large ultrawide displays to tablets and mobile screens, packing a sleek animated hamburger toggle.
+            </p>
+            <ul class="feature-bullets">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Touch-friendly navigation targets</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Accessible ARIA attributes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: SERVICES / FEATURES -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Core Capabilities</span>
+          <h2 class="section-title">Designed with Interactive Micro-States</h2>
+          <p class="section-subtitle">
+            Hover over any element to experience carefully tuned feedback loops and tactile CSS animations.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" tabindex="0">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <span class="service-chip">Scroll Trigger</span>
+            <h3>Background Morphing</h3>
+            <p>Transitions background opacity, frosted blur strength, and border luminescence when passing threshold offset.</p>
+          </div>
+
+          <div class="service-card" tabindex="0">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"></path></svg>
+            </div>
+            <span class="service-chip">Hover State</span>
+            <h3>Magnetic Hover Pill</h3>
+            <p>Nav links render glowing capsule badges and subtle icon lift upon mouse hover with cubic-bezier timing.</p>
+          </div>
+
+          <div class="service-card" tabindex="0">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+            </div>
+            <span class="service-chip">Theme Engine</span>
+            <h3>Instant Theme Switch</h3>
+            <p>Seamlessly toggle between an ultra-modern Dark theme and crisp Light mode with zero flashing.</p>
+          </div>
+
+          <div class="service-card" tabindex="0">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            </div>
+            <span class="service-chip">Clean Code</span>
+            <h3>Vanilla JavaScript</h3>
+            <p>Zero external heavy frameworks. Pure lightweight vanilla script for instant response times.</p>
+          </div>
+
+          <div class="service-card" tabindex="0">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+            </div>
+            <span class="service-chip">Visuals</span>
+            <h3>Glassmorphism UI</h3>
+            <p>Tailored HSL color models, modern glass reflections, and ambient depth layering.</p>
+          </div>
+
+          <div class="service-card" tabindex="0">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <span class="service-chip">Accessibility</span>
+            <h3>WCAG Standard</h3>
+            <p>Full keyboard navigation support, high contrast ratios, and clear focus indicator rings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: SHOWCASE / PORTFOLIO -->
+    <section class="section portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Interactive Showcase Gallery</h2>
+          <p class="section-subtitle">
+            Explore curated design patterns, UI modules, and interactive prototypes.
+          </p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="ui">UI/UX Systems</button>
+          <button class="filter-btn" data-filter="web">Web Apps</button>
+          <button class="filter-btn" data-filter="mobile">Mobile Views</button>
+        </div>
+
+        <!-- Showcase Grid -->
+        <div class="portfolio-grid">
+          <article class="portfolio-card" data-category="ui">
+            <div class="portfolio-banner banner-1">
+              <div class="banner-badge">UI/UX</div>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Design System</span>
+              <h3>Aero Glass Navigation</h3>
+              <p>Ultra-fluid responsive header with progressive blur transitions and auto-centering scroll anchor.</p>
+              <div class="portfolio-tags">
+                <span>CSS Grid</span>
+                <span>Flexbox</span>
+                <span>Glassmorphism</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card" data-category="web">
+            <div class="portfolio-banner banner-2">
+              <div class="banner-badge">Web</div>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Frontend App</span>
+              <h3>Quantum Dashboard UI</h3>
+              <p>High performance interactive telemetry portal with real-time responsive navigation controls.</p>
+              <div class="portfolio-tags">
+                <span>JavaScript</span>
+                <span>ScrollSpy</span>
+                <span>DOM API</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card" data-category="mobile">
+            <div class="portfolio-banner banner-3">
+              <div class="banner-badge">Mobile</div>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Mobile Experience</span>
+              <h3>Responsive Drawer Menu</h3>
+              <p>Smooth touch-driven off-canvas drawer navigation with gesture closing and accessibility focus trap.</p>
+              <div class="portfolio-tags">
+                <span>Touch Events</span>
+                <span>ARIA</span>
+                <span>CSS Transitions</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <div class="contact-left">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="contact-heading">Let's build something exceptional together.</h2>
+            <p class="contact-desc">
+              Have questions about this task or interested in collaborating on responsive modern web applications? Send a message anytime.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div>
+                  <div class="detail-label">Direct Line</div>
+                  <div class="detail-val">+1 (555) 234-5678</div>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </div>
+                <div>
+                  <div class="detail-label">Email Support</div>
+                  <div class="detail-val">hello@novatech-prodigy.dev</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-right">
+            <form class="contact-form" id="contact-form" onsubmit="event.preventDefault();">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Alex Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="alex@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or inquiry..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                <span>Send Message</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+              
+              <div class="form-feedback" id="form-feedback"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================
+       FOOTER
+       ======================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#home" class="nav-brand">
+          <div class="brand-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <span class="brand-text">Nova<span class="brand-accent">Tech</span></span>
+        </a>
+        <p class="footer-tagline">
+          Crafted for Prodigy InfoTech Task 1 &bull; Interactive Fixed Navigation & Responsive UI.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Showcase</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NovaTech. Built with pure HTML5, CSS3 & JS.</p>
+        <!-- Back to Top Button -->
+        <a href="#home" class="back-to-top" id="back-to-top" aria-label="Scroll back to top" title="Back to top">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
